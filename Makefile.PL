@@ -1,7 +1,7 @@
 use ExtUtils::MakeMaker;
 
 WriteMakefile(NAME => 'Fuse::TM',
-	      VERSION    => '0.1',
+	      VERSION    => '0.2',
 	      ABSTRACT => "Accessing Topic Maps as Filesystem",
 	      LICENSE=>"perl",
 	      AUTHOR => 'Alexander Zangerl <alphazulu@cpan.org>',

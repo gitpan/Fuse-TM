@@ -561,12 +561,14 @@ sub mkasshier
     my $d=$self->{fsdata};
     if ($kind==TM->ASSOC)
     {
-	if ($type eq "isa")	# ignore name, attach to involved topics
+	# class-instance: ignore name, attach to involved topics - but only if not reified!
+	# if reified, we need to create an explicit assoc dir to represent the reificiation
+	if ($type eq "isa" && !$tm->is_reified($lid))	
 	{
 	    my ($p,$c,$raw);
 	    $raw=($tm->get_x_players($m,"class"))[0];
 	    $p=$self->lid2name($raw);
-	    
+    
 	    $raw=($tm->get_x_players($m,"instance"))[0];
 	    $c=$self->lid2name($raw);
 	    

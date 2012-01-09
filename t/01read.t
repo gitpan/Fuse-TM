@@ -208,7 +208,7 @@ ok(readlink("$td/topics/topice/involved/1:player") eq "../../../assocs/assocc/1"
 system("fusermount","-u",$td);
 ok(!(0xffff & $?),"unmounting works");
 
-system("./tm2fs","-b","-h",$map,$td);
+system("./bin/tmfs","-b","-h",$map,$td);
 ok(!($? & 0xffff),"mounting on $td with option hide-infra works");
 sleep(1);
 
